@@ -1,0 +1,131 @@
+<div class="wfull">
+  <app-create-admission-component></app-create-admission-component>
+  <app-create-teacher-profile-component
+    [admissions]="detailAdmissions!"
+    [period]="detailPeriod!"
+  ></app-create-teacher-profile-component>
+  <div class="row">
+    <div class="left-item col col-md-4">
+      <app-list-admission-periods-component
+        [listAdmissions]="listAdmissions"
+      ></app-list-admission-periods-component>
+    </div>
+    <div class="right-item col-md-8 col-xl-8">
+      <div
+        class="mt-4 content-header d-flex justify-content-between align-items-center"
+      >
+        <h3>
+          Chi tiết mã {{ detailAdmissions?.code }} | Khóa
+          {{ detailAdmissions?.academicYearPrefix }} | Cấp độ
+          {{ detailAdmissions?.academicDegree! | academicDegree }}
+        </h3>
+        <div
+          class="actions-header d-flex align-items-center justify-content-between mx-2"
+        >
+          <button
+            class="px-2 action-header allot mx-2 text-white d-flex align-items-center rounded-3"
+          >
+            <lucide-icon name="aperture"> </lucide-icon> Phân công
+          </button>
+
+          <button
+            class="action-header add-profile bg-primary text-white d-flex align-items-center rounded-3 px-2"
+            [disabled]="isDisable"
+          >
+            <lucide-icon name="plus" class="text-white"></lucide-icon> Tạo hồ sơ
+          </button>
+        </div>
+      </div>
+      <div
+      class="content-stepbystep d-flex align-items-center justify-content-between"
+    >
+      <div
+        class="step"
+        [ngClass]="{ 'step-active': checkActiveStep('init') }"
+      >
+        <a href="" [routerLink]="['/admin/ky-tuyen-sinh/' + detailAdmissions?.id]">1. Cấu trúc </a>
+      </div>
+      <lucide-icon name="chevron-right" class="chevron-right"></lucide-icon>
+
+      <div
+        class="step"
+        [ngClass]="{ 'step-active': checkActiveStep('receive_documents') }"
+      >
+        <a
+          href=""
+          [routerLink]="['/admin/ho-so-hoc-vien/ky-tuyen-sinh/' + detailAdmissions?.id]"
+          >2. Hồ sơ
+        </a>
+      </div>
+      <lucide-icon name="chevron-right" class="chevron-right"></lucide-icon>
+
+      <div
+        class="step"
+        [ngClass]="{ 'step-active': checkActiveStep('up_a_council') }"
+      >
+        <a href="" [routerLink]="['/admin/lap-hoi-dong/ky-tuyen-sinh/' + detailAdmissions?.id]">3. Lập hội đồng </a>
+      </div>
+      <lucide-icon name="chevron-right" class="chevron-right"></lucide-icon>
+
+      <div
+        class="step"
+        [ngClass]="{ 'step-active': checkActiveStep('mark') }"
+      >
+        <a href="" [routerLink]="['/admin/cham-diem/ky-tuyen-sinh/' + detailAdmissions?.id]">4. Chấm điểm </a>
+      </div>
+      <lucide-icon name="chevron-right" class="chevron-right"></lucide-icon>
+
+      <div
+        class="step"
+        [ngClass]="{ 'step-active': checkActiveStep('recognize_students') }"
+      >
+        <a href="">5. Công nhận học viên </a>
+      </div>
+      <lucide-icon name="chevron-right" class="chevron-right"></lucide-icon>
+
+      <div
+        class="step mx-3"
+        [ngClass]="{ 'step-active': checkActiveStep('done') }"
+      >
+        <a href="">6. Tổng kết </a>
+      </div>
+    </div>
+      <!-- check if step => show component -->
+      <!-- <container-element [ngSwitch]="detailAdmissions?.currentStep">
+          <app-step-1-structure-component
+            [admissions]="detailAdmissions!"
+            [period]="detailPeriod || {}"
+            *ngSwitchCase="'init'"
+          ></app-step-1-structure-component>
+          <app-step-2-brief-component
+            [admissions]="detailAdmissions!"
+            [admissionProfiles]="listAdmissionProfile!"
+            *ngSwitchCase="'receive_documents'"
+          ></app-step-2-brief-component>
+          <app-step-3-set-up-council-component
+            [admissions]="detailAdmissions!"
+            [admissionProfiles]="listAdmissionProfile!"
+            *ngSwitchCase="'up_a_council'"
+          ></app-step-3-set-up-council-component>
+          <app-step-4-mark-component
+            [admissions]="detailAdmissions!"
+            *ngSwitchCase="'mark'"
+          ></app-step-4-mark-component>
+          <app-step-5-recognize-students-component
+            [admissions]="detailAdmissions!"
+            *ngSwitchCase="'recognize_students'"
+          ></app-step-5-recognize-students-component>
+          <app-step-6-summary-component
+            [admissions]="detailAdmissions!"
+            *ngSwitchCase="'done'"
+          ></app-step-6-summary-component>
+        </container-element> -->
+
+      <app-step-3-set-up-council-component
+        [admissions]="detailAdmissions!"
+        [admissionProfiles]="listAdmissionProfile!"
+        [listTeachers] = "listTeacherCreators!"
+      ></app-step-3-set-up-council-component>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="d-flex flex-column justify-content-between">
+  <div
+    class="mt-2 menu-header d-flex justify-content-between align-items-center"
+  >
+    <p class="px-2">Các kỳ tuyển sinh</p>
+    <div
+      class="actions-menu d-flex flex-row justify-content-between align-items-center px-2"
+    >
+      <button class="button-filter d-flex align-items-center px-2 py-8 mx-10">
+        <span class="button-icon">
+          <lucide-icon name="filter"></lucide-icon>
+        </span>
+        <span class="button-text">Lọc</span>
+      </button>
+      <button
+        class="button-create d-flex align-items-center px-3 py-9"
+        data-bs-toggle="modal"
+        data-bs-target="#createModal"
+      >
+        <span class="button-icon">
+          <lucide-icon name="plus" class="text-light"></lucide-icon>
+        </span>
+        <span class="button-text text-light" >Tạo mới</span>
+      </button>
+    </div>
+  </div>
+  <div class="menu-lists">
+    <div
+      class="menu-list d-flex flex-column justify-content-between text-nowrap"
+      *ngFor="let admissions of listAdmissions"
+      routerLinkActive="active"
+      [routerLink]="['/admin/ky-tuyen-sinh/' + admissions.id]"
+    >
+      <!--  -->
+      <div class="item d-flex justify-content-between align-items-center">
+        <ul class="mx-2">
+          <li>
+            Mã: <strong class="admissions-code">{{ admissions.code }}</strong>
+          </li>
+          <li>
+            Khoá:
+            <strong class="admissions-academicYearPrefix">{{
+              admissions.academicYearPrefix
+            }}</strong>
+          </li>
+          <li>
+            Trạng thái: <strong class="profile-status">Nhận hồ sơ</strong>
+          </li>
+        </ul>
+        <ul class="mx-2">
+          <li class="d-flex align-items-center justify-content-between">
+            <span
+              >Cấp độ:
+              <strong class="admissions-academicDegree">{{
+                admissions.academicDegree! | academicDegree
+              }}</strong></span
+            >
+            <button
+              (click)="onDelete(admissions)"
+              type="button"
+              class="btn-delete d-flex align-items-center text-danger rounded"
+            >
+              <lucide-icon name="trash-2"></lucide-icon>
+            </button>
+          </li>
+      
+          <li class="text-nowrap">
+            Thời gian bắt đầu:
+            <strong class="admissions-startTime">{{
+              admissions.startTime | date : "dd/MM/yyyy"
+            }}</strong>
+          </li>
+          <li>Phụ trách chính: <strong class="admin">Nguyet Nguyet</strong></li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>

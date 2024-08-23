@@ -1,0 +1,41 @@
+<div class="list-student-profile d-flex align-items-center justify-content-between">
+  
+  <span class="ml-2 list-teacher-point">Danh sách giám khảo chấm hồ sơ</span>
+  <div class="actions-student-profile d-flex p-2">
+    <button class="reach-action mx-2 actions-student-profile" data-bs-toggle="modal"
+    data-bs-target="#createTeacherProfile"><lucide-icon name="plus" class="p-1"></lucide-icon> Thêm giám khảo mới</button
+    >
+  </div>
+</div>
+<div class="content-form-table">
+  <table class="table text-center table-bordered">
+    <thead class="border-0">
+      <tr>
+        <th>STT</th>
+        <th>Họ và tên</th>
+        <th>Địa chỉ email</th>
+        <th>Học vị</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listTeacher of listTeachers">
+        <th>{{ listTeacher.id }}</th>
+        <th>{{ listTeacher.fullName}}</th>
+        <td>{{ listTeacher.email }}</td>
+        <th>Giáo sư</th>
+
+        <td class="">
+          <button type="button" class="action-profile reach edit-examiner text-white">
+            <lucide-icon name="pencil"></lucide-icon> Chỉnh sửa
+          </button>
+          <button type="button" class="action-profile not-check delete-examiner text-white">
+            <lucide-icon name="x"></lucide-icon> Xoá
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-bottom-step-component></app-bottom-step-component>

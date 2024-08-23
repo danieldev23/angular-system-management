@@ -1,0 +1,631 @@
+@import "bootstrap/scss/bootstrap";
+
+$primary-color: #2364aa;
+$black: #0a0908;
+$error-color: #f24c4c;
+$warning-color: #f9a620;
+$success-color: #1bb060;
+$gray: #dbdedb;
+$gray-dark: #5e6472;
+$design-bg: #9747ff;
+$active-background: #f1f5f9;
+$white: #ffffff;
+$light-gray: #f1f5f9;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-family: "Be Vietnam Pro" !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  color: $black;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+a, a:hover {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+* {
+  font-family: "Be Vietnam Pro" !important;
+}
+.bg-primary {
+  background-color: $primary-color !important; /* Đặt màu nền là trắng */
+}
+.main {
+  width: 100%;
+  height: 100%;
+}
+.wfull {
+  width: 100%;
+  height: 100%;
+}
+// .app-list-admission-periods-component{
+//   width: 33.3%;
+//   background: #1bb060;
+// }
+// .right-item {
+//   width: calc(100% - 33.3%);
+// }
+// .menu {
+//   width: 100%;
+// }
+.profile-avt-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+.profile-admin {
+  margin: 0 1rem;
+}
+.nav-head {
+  margin: 0 10%;
+}
+.navbar-brand {
+  color: $primary-color;
+  font-size: 20px;
+  font-weight: 700;
+}
+.input-group {
+  margin-right: 20px;
+}
+.add-member {
+  border-bottom: 1px solid $black;
+  width: 20rem;
+}
+.navbar-links {
+  margin-left: 230px;
+}
+.nav-link {
+  font-size: 18px;
+  color: $black;
+}
+.left-item {
+}
+.menu-header {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray;
+}
+.menu-lists {
+  height: 473px;
+  max-height: 473px;
+  overflow: auto;
+  // padding: 0 24px;
+}
+.left-item {
+  border-right: 1px solid $gray;
+}
+.group_delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-header > p {
+  margin: 0;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.actions-menu {
+  display: flex;
+}
+.action .list-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-filter {
+  display: flex;
+  align-items: center;
+  padding: 2px 8px;
+  margin-right: 10px;
+  background-color: $light-gray;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid $gray;
+}
+.button-icon {
+  margin-right: 5px;
+}
+.button-create {
+  display: flex;
+  padding: 3px 9px;
+  border: none;
+  align-items: center;
+  background-color: $primary-color;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.button-text {
+  text-align: center;
+}
+.menu-lists {
+  overflow-x: hidden;
+}
+.item {
+  height: 86px;
+  border-bottom: 1px solid $gray;
+}
+
+  .content-footer {
+    background: #ffffff;
+    /* left: 33%; */
+    position: fixed;
+    bottom: 0;
+    width: 66%;
+}
+.actions-footer {
+  // position: absolute;
+  // left: 49rem;
+}
+
+.save,
+.complete {
+  width: 8rem;
+  border-radius: 6px;
+  height: 2.4rem;
+  color: $white;
+  border: none;
+  outline: none;
+}
+.save {
+  background-color: $primary-color;
+}
+.save > lucide-icon {
+  margin-right: 2px;
+  color: $white;
+}
+.complete {
+  background-color: $success-color;
+  margin-left: 1rem;
+}
+.btn-delete {
+  font-size: 14px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+  margin-top: -8px;
+  // height: 20px;
+  background: transparent;
+}
+.trash-2 {
+  color: $error-color;
+}
+.active {
+  background: $light-gray;
+  border-right: 4px solid $primary-color;
+}
+
+.action-header {
+  margin-top: -12px;
+  padding: 2px 8px; 
+  border: none;
+  outline: none;
+}
+
+.action-header lucide-icon {
+  margin-right: 20px;
+  color: $white;
+}
+.allot {
+  background: $warning-color;
+}
+.content-stepbystep {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 1.6rem;
+}
+.content-form-left {
+  overflow-y: auto;
+  background: $light-gray;
+  height: 21rem;
+  max-height: 21rem;
+}
+.form-input {
+  width: 76%;
+  display: grid;
+  background-color: #fff;
+  grid-row: inherit;
+  border-radius: 5px;
+  box-shadow: 2px 2px #dbdedb;
+  margin-bottom: 12px;
+}
+.form-input-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 5% 2.5% 5%;
+}
+.content-header {
+  border-bottom: 1px solid $gray;
+}
+.input {
+  width: 58%;
+}
+.forms {
+  padding: 1rem 3rem;
+}
+
+.form-control {
+  padding: 1px 24px 1px 6px;
+}
+.form-input-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2.5% 5% 5% 5%;
+}
+.btn-delete {
+}
+.btn-create {
+  margin-left: 10px;
+}
+.check {
+  display: flex;
+  margin-left: 10px;
+}
+.check-input {
+  margin-left: 10px;
+}
+.admissions-academicDegree,
+.admissions-academicYearPrefix,
+.admissions-code,
+.admissions-code,
+.admissions-startTime,
+.profile-status {
+  font-weight: 600;
+}
+.profile-status {
+  color: $design-bg;
+}
+.admin {
+  color: $primary-color;
+  font-weight: 600;
+
+}
+/* Thiết bị nhỏ hơn hoặc bằng 575.98px */
+@media (max-width: 575.98px) {
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* Thiết bị từ 576px trở lên (SM) */
+@media (min-width: 576px) {
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* Thiết bị từ 576px đến 991px được coi là laptop */
+@media (min-width: 576px) and (max-width: 991px) {
+  /* Thêm các quy tắc CSS cho laptop */
+}
+
+/* Thiết bị từ 768px trở lên (MD) */
+@media (min-width: 768px) {
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* Thiết bị từ 992px trở lên (LG) */
+@media (min-width: 992px) {
+  .item {
+    font-size: 12px;
+  }
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* Thiết bị từ 1200px trở lên (XL) */
+// @media only screen and (min-width: 1200px) {
+//   .item {
+//     font-size: 12px;
+//   }
+
+//   .content-form-left {
+//     max-height: 16rem;
+//     overflow-y: auto;
+//   }
+//   .action-footer {
+//     left: 38rem;
+//   }
+//   /* Thêm các quy tắc CSS tương ứng */
+// }
+
+// @media (max-width: 1318px) {
+//   .content-form-left {
+//     max-height: 16rem;
+//     overflow-y: auto;
+//   }
+//   .action-footer {
+//     left: 38rem;
+//   }
+// }
+/* Thiết bị từ 1400px trở lên (XXL) */
+@media (min-width: 1400px) {
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* MacBook Air 13 inch và MacBook Pro 13 inch */
+@media (min-width: 2560px) and (max-width: 2560px) {
+  .item {
+    font-size: 14px;
+  }
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* MacBook Pro 14 inch */
+@media (min-width: 3024px) and (max-width: 3024px) {
+  .item {
+    font-size: 16px;
+  }
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* MacBook Air 15 inch */
+@media (min-width: 2880px) and (max-width: 2880px) {
+  .item {
+    font-size: 18px;
+  }
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+/* MacBook Pro 16 inch */
+@media (min-width: 3456px) and (max-width: 3456px) {
+  .item {
+    font-size: 20px;
+  }
+  /* Thêm các quy tắc CSS tương ứng */
+}
+
+@media (min-height: 667) {
+  .content-form-left {
+    max-height: 100%;
+    overflow-y: auto;
+  }  
+}
+
+.right-item {
+  padding: 0 1.5rem 0 1rem;
+}
+div#mat-select-value-1  {
+  border: 1px solid $gray-dark;
+}
+.no-border-bottom {
+  border-bottom: none !important;
+}
+/* Loại bỏ border-bottom đậm của thead */
+table thead th {
+  border-bottom: none !important;
+}
+.btn {
+
+}
+.action-profile {
+  margin: 0 3px;
+  width: 7rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 1.6rem;
+}
+
+.reach {
+  background: $success-color;
+
+}
+.not-yet {
+  background: $warning-color;
+}
+.not-check {
+  background: $gray;
+}
+.content-form-table {
+  overflow-y: auto;
+    height: 21rem;
+}
+.step a {
+  color: $gray;
+}
+
+.step-active a {
+  font-weight: bold;
+  color: $primary-color;
+}
+lucide-icon.step-active {
+  color: $primary-color;
+}
+.list-student-profile {
+  
+  color: $gray-dark;
+  font-size: 13px;
+  border: 1px 1px 0 1px solid $gray;
+}
+.actions-student-profile button {
+  background: $light-gray;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+}
+.list-teacher-poin {
+  font-size: 1rem;
+}
+
+.edit-examiner {
+  background: $primary-color;
+}
+.delete-examiner {
+  background: $error-color;
+}
+.edit-examiner lucide-icon, .delete-examiner lucide-icon {
+  font-size: 20px;
+}
+.update-point {
+  border: none;
+  border-radius: .3rem;
+}
+.save-point {
+  margin: 0 auto;
+  width: 7rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 1.8rem;
+  color: $white;
+  background: $success-color;
+}
+.input-point {
+  width: 14rem;
+  border-width: 0.1px;
+  border-color: $gray;
+  border-radius: 3px;
+  height: 1.8rem;
+}
+.input-point:focus, .input-point:focus-visible {
+  border-color: $gray;
+  outline: none;
+}
+.profile-active {
+  color: $primary-color;
+}
+.list-student-profiles {
+  cursor: pointer;
+}
+.table th, .table td {
+  padding: 5px 3px;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+span.ml-2.list-teacher-point {
+  font-size: 0.9rem;
+}
+.list-student-profile {
+  margin-top: 2px;
+  border-top: 1px solid #dbdedb;
+}

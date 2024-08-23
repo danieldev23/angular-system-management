@@ -1,0 +1,38 @@
+<div class="list-student-profile d-flex align-items-center justify-content-between">
+  <span class="ml-2">Danh sách hồ sơ các thí sinh đã tổng hợp</span>
+  <div class="actions-student-profile d-flex p-2">
+    <button class="not-mark mx-2"><lucide-icon name="filter" class="p-1"></lucide-icon> Chưa đánh dấu</button><button class="reach-action mx-2" ><lucide-icon name="filter" class="p-1"></lucide-icon> Đạt</button
+    ><button class="not-check mx-2"><lucide-icon name="filter" class="p-1"></lucide-icon> Chưa đạt</button>
+  </div>
+</div>
+<div class="content-form-table">
+  <table class="table text-center table-bordered">
+    <thead class="border-0">
+      <tr>
+        <th>STT</th>
+        <th>Họ và tên</th>
+        <th>Thông tin liên lạc</th>
+        <th>Ghi chú</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admissionProfile of admissionProfiles">
+        <th>{{ admissionProfile.id }}</th>
+        <td>{{ admissionProfile.fullName }}</td>
+        <td>{{ admissionProfile.email }}</td>
+        <td>{{ admissionProfile.noteText }}</td>
+        <td class="">
+          <button type="button" class="action-profile reach">
+            <lucide-icon name="check"></lucide-icon> Đạt
+          </button>
+          <button type="button" class="action-profile not-check">
+            <lucide-icon name="x"></lucide-icon> Chưa đạt
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-bottom-step-component></app-bottom-step-component>

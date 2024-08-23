@@ -1,0 +1,415 @@
+<body>
+  <div class="header">
+     <nav id="nav1" class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+           <div id="navbarSupportedContent" class="collapse navbar-collapse grid text-center">
+              <div class="logo"><a href="#" class="navbar-brand">ĐẠI HỌC KIẾN TRÚC HÀ NỘI</a></div>
+              <div class="input-group rounded">
+                 <input type="search" placeholder="Tên, số điện thoại, email hoặc mã hồ sơ thí sinh ...." aria-label="Search" aria-describedby="search-addon" class="form-control rounded">
+                 <span id="search-addon" class="input-group-text border-0">
+                    <lucide-icon name="search" ng-reflect-name="search">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+                          <circle cx="11" cy="11" r="8" key="4ej97u"></circle>
+                          <path d="m21 21-4.3-4.3" key="1qie3q"></path>
+                       </svg>
+                    </lucide-icon>
+                 </span>
+              </div>
+              <div class="add-member" style="border-bottom: 1px solid black;"><a href="#" style="text-decoration: none;">Thêm nhanh thí sinh</a></div>
+              <div class="profile-admin">
+                 <div class="profile-avt" style="max-width: 100%;"><img src="/assets/img/admin1.jpg" class="profile-avt-img"></div>
+                 <div class="name-info-admin">
+                    <div class="name-admin"><a href="">Nguyet Nguyet</a></div>
+                    <div class="info-admin"><a href="">nguyetnguyet</a></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </nav>
+     <nav id="nav2" class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+           <div>
+              <ul class="nav-list">
+                 <li class="nav-item"><a routerlinkactive="router-link-active" class="nav-link" ng-reflect-router-link-active="router-link-active" ng-reflect-router-link="/admin/dashboard" href="/admin/dashboard">Trang chủ</a></li>
+                 <li class="nav-item"><a routerlinkactive="router-link-active" class="nav-link router-link-active" ng-reflect-router-link-active="router-link-active" ng-reflect-router-link="/admin/ky-tuyen-sinh" href="/admin/ky-tuyen-sinh">Các kì tuyển sinh</a></li>
+                 <li class="nav-item"><a routerlinkactive="router-link-active" class="nav-link" ng-reflect-router-link-active="router-link-active" ng-reflect-router-link="/admin/ho-so-hoc-vien" href="/admin/ho-so-hoc-vien">Hồ sơ học viên</a></li>
+                 <li class="nav-item"><a routerlinkactive="router-link-active" class="nav-link" ng-reflect-router-link-active="router-link-active" ng-reflect-router-link="/admin/de-tai-nghien-cuu" href="/admin/de-tai-nghien-cuu">Đề tài nghiên cứu</a></li>
+              </ul>
+           </div>
+        </div>
+     </nav>
+  </div>
+  <div class="main">
+     <router-outlet></router-outlet>
+     <app-screen-admissions-detail-admin-component _nghost-ng-c770719024="">
+        <app-create-admission-component _ngcontent-ng-c770719024="">
+           <div id="createModal" aria-labelledby="createModalLabel" class="modal fade">
+              <div class="modal-dialog">
+                 <div class="modal-content">
+                    <div class="modal-header">
+                       <h3 id="createModalLabel" class="modal-title"> Tạo mới các kỳ tuyển sinh </h3>
+                       <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <form novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-invalid">
+                          <div class="mb-3"><label for="academicYearPrefix" class="form-label">Khoá học:</label><input type="text" id="academicYearPrefix" formcontrolname="academicYearPrefix" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-required="" ng-reflect-name="academicYearPrefix"></div>
+                          <div class="mb-3"><label for="academicYearStart" class="form-label">Năm bắt đầu:</label><input type="number" id="academicYearStart" formcontrolname="academicYearStart" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-required="" ng-reflect-name="academicYearStart"></div>
+                          <div class="mb-3"><label for="academicYearEnd" class="form-label">Năm kết thúc:</label><input type="number" id="academicYearEnd" formcontrolname="academicYearEnd" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-required="" ng-reflect-name="academicYearEnd"></div>
+                          <div class="mb-3">
+                             <label for="academicDegree" class="form-label">Cấp độ:</label>
+                             <select type="number" id="academicDegree" formcontrolname="academicDegree" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-required="" ng-reflect-name="academicDegree">
+                                <option value="0" ng-reflect-value="0">Tiến sỹ</option>
+                                <option value="1" ng-reflect-value="1">Thạc sỹ</option>
+                             </select>
+                          </div>
+                          <div class="mb-3"><label for="startTime" class="form-label">Thời gian bắt đầu:</label><input type="date" id="startTime" formcontrolname="startTime" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-required="" ng-reflect-name="startTime"></div>
+                          <div class="mb-3 form-check"><input type="checkbox" id="isSendingResumesFreely" formcontrolname="isSendingResumesFreely" required="" class="form-check-input ng-untouched ng-pristine ng-invalid" ng-reflect-required="" ng-reflect-name="isSendingResumesFreely"><label for="isSendingResumesFreely" class="form-check-label">Cho phép gửi hồ sơ tự do</label></div>
+                       </form>
+                    </div>
+                    <div class="modal-footer"><button type="button" data-bs-dismiss="modal" class="btn btn-secondary" style="font-size: 16px;"> Đóng </button><button type="button" class="btn btn-primary btnCreate" style="font-size: 16px;" disabled=""> Tạo mới </button></div>
+                 </div>
+              </div>
+           </div>
+        </app-create-admission-component>
+        <div _ngcontent-ng-c770719024="" class="main-child">
+           <app-list-admission-periods-component _ngcontent-ng-c770719024="" ng-reflect-list-admissions="[object Object],[object Object">
+              <div class="menu">
+                 <div class="menu-header">
+                    <p>Các kỳ tuyển sinh</p>
+                    <div class="actions-menu">
+                       <button class="button-filter">
+                          <span class="button-icon">
+                             <lucide-icon name="filter" ng-reflect-name="filter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter">
+                                   <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" key="1yg77f"></polygon>
+                                </svg>
+                             </lucide-icon>
+                          </span>
+                          <span class="button-text">Lọc</span>
+                       </button>
+                       <button data-bs-toggle="modal" data-bs-target="#createModal" class="button-create">
+                          <span class="button-icon">
+                             <lucide-icon name="plus" style="color: white;" ng-reflect-name="plus">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                   <path d="M5 12h14" key="1ays0h"></path>
+                                   <path d="M12 5v14" key="s699le"></path>
+                                </svg>
+                             </lucide-icon>
+                          </span>
+                          <span class="button-text" style="color: white;">Tạo mới</span>
+                       </button>
+                    </div>
+                 </div>
+                 <div class="menu-lists">
+                    <div routerlinkactive="active" class="menu-list active" tabindex="0" ng-reflect-router-link-active="active" ng-reflect-router-link="/admin/ky-tuyen-sinh/34">
+                       <div class="item">
+                          <ul class="item1-list-cl1">
+                             <li> Mã: <strong class="admissions-code">nUCxMKcGaB</strong></li>
+                             <li> Khoá: <strong class="admissions-academicYearPrefix">K65</strong></li>
+                             <li> Trạng thái: <strong class="profile-status">Nhận hồ sơ</strong></li>
+                          </ul>
+                          <ul class="item1-list-cl2">
+                             <div class="group_delete">
+                                <li> Cấp độ: <strong class="admissions-academicDegree">Tiến sỹ</strong></li>
+                                <button type="button" class="btn"> Xóa </button>
+                             </div>
+                             <li> Thời gian bắt đầu: <strong class="admissions-startTime">20/04/2024</strong></li>
+                             <li> Phụ trách chính: <strong class="admin">Nguyet Nguyet</strong></li>
+                          </ul>
+                       </div>
+                    </div>
+                    <div routerlinkactive="active" class="menu-list" tabindex="0" ng-reflect-router-link-active="active" ng-reflect-router-link="/admin/ky-tuyen-sinh/44">
+                       <div class="item">
+                          <ul class="item1-list-cl1">
+                             <li> Mã: <strong class="admissions-code">1AkZ3g8tb4</strong></li>
+                             <li> Khoá: <strong class="admissions-academicYearPrefix">u</strong></li>
+                             <li> Trạng thái: <strong class="profile-status">Nhận hồ sơ</strong></li>
+                          </ul>
+                          <ul class="item1-list-cl2">
+                             <div class="group_delete">
+                                <li> Cấp độ: <strong class="admissions-academicDegree">Tiến sỹ</strong></li>
+                                <button type="button" class="btn"> Xóa </button>
+                             </div>
+                             <li> Thời gian bắt đầu: <strong class="admissions-startTime">11/05/2024</strong></li>
+                             <li> Phụ trách chính: <strong class="admin">Nguyet Nguyet</strong></li>
+                          </ul>
+                       </div>
+                    </div>
+                    <!--bindings={
+                       "ng-reflect-ng-for-of": "[object Object],[object Object"
+                       }-->
+                 </div>
+              </div>
+           </app-list-admission-periods-component>
+           <div _ngcontent-ng-c770719024="" class="content">
+              <div _ngcontent-ng-c770719024="" class="content-header">
+                 <h3 _ngcontent-ng-c770719024=""> Chi tiết mã nUCxMKcGaB | Khóa K65 | Cấp độ Tiến sỹ </h3>
+                 <div _ngcontent-ng-c770719024="" class="actions-header">
+                    <button _ngcontent-ng-c770719024="" class="action-header allot">
+                       <lucide-icon _ngcontent-ng-c770719024="" name="aperture" ng-reflect-name="aperture">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-aperture">
+                             <circle cx="12" cy="12" r="10" key="1mglay"></circle>
+                             <line x1="14.31" x2="20.05" y1="8" y2="17.94" key="jdes2e"></line>
+                             <line x1="9.69" x2="21.17" y1="8" y2="8" key="1gubuk"></line>
+                             <line x1="7.38" x2="13.12" y1="12" y2="2.06" key="1m4d1n"></line>
+                             <line x1="9.69" x2="3.95" y1="16" y2="6.06" key="1wye2p"></line>
+                             <line x1="14.31" x2="2.83" y1="16" y2="16" key="1l9f4x"></line>
+                             <line x1="16.62" x2="10.88" y1="12" y2="21.94" key="1jjvfs"></line>
+                          </svg>
+                       </lucide-icon>
+                       Phân công 
+                    </button>
+                    <button _ngcontent-ng-c770719024="" class="action-header add-profile">
+                       <lucide-icon _ngcontent-ng-c770719024="" name="plus" ng-reflect-name="plus">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                             <path d="M5 12h14" key="1ays0h"></path>
+                             <path d="M12 5v14" key="s699le"></path>
+                          </svg>
+                       </lucide-icon>
+                       Tạo hồ sơ 
+                    </button>
+                 </div>
+              </div>
+              <div _ngcontent-ng-c770719024="" class="content-stepbystep">
+                 <div _ngcontent-ng-c770719024="" class="step step-active" ng-reflect-ng-class="[object Object]">
+                    <a _ngcontent-ng-c770719024="" href="">1. Cấu trúc </a>
+                    <lucide-icon _ngcontent-ng-c770719024="" name="chevron-right" ng-reflect-name="chevron-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                          <path d="m9 18 6-6-6-6" key="mthhwq"></path>
+                       </svg>
+                    </lucide-icon>
+                 </div>
+                 <div _ngcontent-ng-c770719024="" class="step" ng-reflect-ng-class="[object Object]">
+                    <a _ngcontent-ng-c770719024="" href="/admin/ho-so-hoc-vien" routerlink="/admin/ho-so-hoc-vien/" ng-reflect-router-link="/admin/ho-so-hoc-vien/">2. Hồ sơ </a>
+                    <lucide-icon _ngcontent-ng-c770719024="" name="chevron-right" ng-reflect-name="chevron-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                          <path d="m9 18 6-6-6-6" key="mthhwq"></path>
+                       </svg>
+                    </lucide-icon>
+                 </div>
+                 <div _ngcontent-ng-c770719024="" class="step" ng-reflect-ng-class="[object Object]">
+                    <a _ngcontent-ng-c770719024="" href="">3. Lập hội đồng </a>
+                    <lucide-icon _ngcontent-ng-c770719024="" name="chevron-right" ng-reflect-name="chevron-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                          <path d="m9 18 6-6-6-6" key="mthhwq"></path>
+                       </svg>
+                    </lucide-icon>
+                 </div>
+                 <div _ngcontent-ng-c770719024="" class="step" ng-reflect-ng-class="[object Object]">
+                    <a _ngcontent-ng-c770719024="" href="">4. Chấm điểm </a>
+                    <lucide-icon _ngcontent-ng-c770719024="" name="chevron-right" ng-reflect-name="chevron-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                          <path d="m9 18 6-6-6-6" key="mthhwq"></path>
+                       </svg>
+                    </lucide-icon>
+                 </div>
+                 <div _ngcontent-ng-c770719024="" class="step" ng-reflect-ng-class="[object Object]">
+                    <a _ngcontent-ng-c770719024="" href="">5. Công nhận học viên </a>
+                    <lucide-icon _ngcontent-ng-c770719024="" name="chevron-right" ng-reflect-name="chevron-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                          <path d="m9 18 6-6-6-6" key="mthhwq"></path>
+                       </svg>
+                    </lucide-icon>
+                 </div>
+                 <div _ngcontent-ng-c770719024="" class="step" ng-reflect-ng-class="[object Object]"><a _ngcontent-ng-c770719024="" href="">6. Tổng kết </a></div>
+              </div>
+              <container-element _ngcontent-ng-c770719024="" ng-reflect-ng-switch="init">
+                 <app-step-1-structure-component _ngcontent-ng-c770719024="" ng-reflect-admissions="[object Object]" ng-reflect-period="[object Object]">
+                    <div class="content-form">
+                       <div class="content-component">
+                          <div class="content-form-left">
+                             <div class="forms">
+                                <div class="form-input">
+                                   <div class="form-input-content">
+                                      <div class="input"><input type="text" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-model="Họ và tên" ng-reflect-options="[object Object]"></div>
+                                      <div class="input-group-prepend">
+                                         <select class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-model="string.full_name" ng-reflect-options="[object Object]">
+                                            <option value="string" ng-reflect-value="string">Chuỗi bình thường</option>
+                                            <option value="file" ng-reflect-value="file">File đính kèm</option>
+                                            <option value="string.full_name" ng-reflect-value="string.full_name">Chuỗi tên</option>
+                                            <option value="string.email" ng-reflect-value="string.email">Chuỗi email</option>
+                                            <option value="string.tell" ng-reflect-value="string.tell">Chuỗi số điện thoại</option>
+                                         </select>
+                                         <lucide-icon name="chevron-down" ng-reflect-name="chevron-down">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                               <path d="m6 9 6 6 6-6" key="qrunsl"></path>
+                                            </svg>
+                                         </lucide-icon>
+                                      </div>
+                                   </div>
+                                   <div class="form-input-action">
+                                      <!--bindings={
+                                         "ng-reflect-ng-if": "false"
+                                         }-->
+                                      <div class="btn-create">
+                                         <button class="button-create">
+                                            <span class="button-icon">
+                                               <lucide-icon name="plus" style="color: white;" ng-reflect-name="plus">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                                     <path d="M5 12h14" key="1ays0h"></path>
+                                                     <path d="M12 5v14" key="s699le"></path>
+                                                  </svg>
+                                               </lucide-icon>
+                                            </span>
+                                            <span class="button-text" style="color: white;">Tạo mới</span>
+                                         </button>
+                                      </div>
+                                      <div class="check"><label for="flexCheckDefault" class="check-label"> Trường bắt buộc </label><input type="checkbox" id="flexCheckDefault" class="check-input ng-untouched ng-pristine ng-valid" ng-reflect-model="1" ng-reflect-options="[object Object]"></div>
+                                   </div>
+                                </div>
+                                <div class="form-input">
+                                   <div class="form-input-content">
+                                      <div class="input"><input type="text" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-model="Địa chỉ email" ng-reflect-options="[object Object]"></div>
+                                      <div class="input-group-prepend">
+                                         <select class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-model="string.email" ng-reflect-options="[object Object]">
+                                            <option value="string" ng-reflect-value="string">Chuỗi bình thường</option>
+                                            <option value="file" ng-reflect-value="file">File đính kèm</option>
+                                            <option value="string.full_name" ng-reflect-value="string.full_name">Chuỗi tên</option>
+                                            <option value="string.email" ng-reflect-value="string.email">Chuỗi email</option>
+                                            <option value="string.tell" ng-reflect-value="string.tell">Chuỗi số điện thoại</option>
+                                         </select>
+                                         <lucide-icon name="chevron-down" ng-reflect-name="chevron-down">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                               <path d="m6 9 6 6 6-6" key="qrunsl"></path>
+                                            </svg>
+                                         </lucide-icon>
+                                      </div>
+                                   </div>
+                                   <div class="form-input-action">
+                                      <!--bindings={
+                                         "ng-reflect-ng-if": "false"
+                                         }-->
+                                      <div class="btn-create">
+                                         <button class="button-create">
+                                            <span class="button-icon">
+                                               <lucide-icon name="plus" style="color: white;" ng-reflect-name="plus">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                                     <path d="M5 12h14" key="1ays0h"></path>
+                                                     <path d="M12 5v14" key="s699le"></path>
+                                                  </svg>
+                                               </lucide-icon>
+                                            </span>
+                                            <span class="button-text" style="color: white;">Tạo mới</span>
+                                         </button>
+                                      </div>
+                                      <div class="check"><label for="flexCheckDefault" class="check-label"> Trường bắt buộc </label><input type="checkbox" id="flexCheckDefault" class="check-input ng-untouched ng-pristine ng-valid" ng-reflect-model="1" ng-reflect-options="[object Object]"></div>
+                                   </div>
+                                </div>
+                                <div class="form-input">
+                                   <div class="form-input-content">
+                                      <div class="input"><input type="text" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-model="Số điện thoại" ng-reflect-options="[object Object]"></div>
+                                      <div class="input-group-prepend">
+                                         <select class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-model="string.tell" ng-reflect-options="[object Object]">
+                                            <option value="string" ng-reflect-value="string">Chuỗi bình thường</option>
+                                            <option value="file" ng-reflect-value="file">File đính kèm</option>
+                                            <option value="string.full_name" ng-reflect-value="string.full_name">Chuỗi tên</option>
+                                            <option value="string.email" ng-reflect-value="string.email">Chuỗi email</option>
+                                            <option value="string.tell" ng-reflect-value="string.tell">Chuỗi số điện thoại</option>
+                                         </select>
+                                         <lucide-icon name="chevron-down" ng-reflect-name="chevron-down">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                               <path d="m6 9 6 6 6-6" key="qrunsl"></path>
+                                            </svg>
+                                         </lucide-icon>
+                                      </div>
+                                   </div>
+                                   <div class="form-input-action">
+                                      <!--bindings={
+                                         "ng-reflect-ng-if": "false"
+                                         }-->
+                                      <div class="btn-create">
+                                         <button class="button-create">
+                                            <span class="button-icon">
+                                               <lucide-icon name="plus" style="color: white;" ng-reflect-name="plus">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                                     <path d="M5 12h14" key="1ays0h"></path>
+                                                     <path d="M12 5v14" key="s699le"></path>
+                                                  </svg>
+                                               </lucide-icon>
+                                            </span>
+                                            <span class="button-text" style="color: white;">Tạo mới</span>
+                                         </button>
+                                      </div>
+                                      <div class="check"><label for="flexCheckDefault" class="check-label"> Trường bắt buộc </label><input type="checkbox" id="flexCheckDefault" class="check-input ng-untouched ng-pristine ng-valid" ng-reflect-model="1" ng-reflect-options="[object Object]"></div>
+                                   </div>
+                                </div>
+                                <!--bindings={
+                                   "ng-reflect-ng-for-of": "[object Object],[object Object"
+                                   }-->
+                             </div>
+                          </div>
+                          <div class="content-form-right">
+                             <form novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid">
+                                <div class="right-item">
+                                   <p>Mã tuyển sinh</p>
+                                   <div class="input-right"><input type="text" placeholder="Mã tuyển sinh ..." formcontrolname="academicCode" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="academicCode"></div>
+                                </div>
+                                <div class="right-item">
+                                   <p>Khóa</p>
+                                   <div class="input-right"><input type="text" placeholder="Khóa tuyển sinh ..." formcontrolname="academicYearPrefix" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="academicYearPrefix"></div>
+                                </div>
+                                <div class="right-item">
+                                   <p>Cấp độ</p>
+                                   <div class="input-group-prepend prepend-right">
+                                      <select formcontrolname="academicDegree" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-name="academicDegree">
+                                         <option value="ts" ng-reflect-value="ts">Tiến sỹ</option>
+                                         <option value="th.s" ng-reflect-value="th.s">Thạc sỹ</option>
+                                      </select>
+                                      <lucide-icon name="chevron-down" ng-reflect-name="chevron-down">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                            <path d="m6 9 6 6 6-6" key="qrunsl"></path>
+                                         </svg>
+                                      </lucide-icon>
+                                   </div>
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                    <app-bottom-step-component>
+                       <div class="content-footer">
+                          <span>Thời gian đầu: 10/05/2024 22:00:00</span>
+                          <div class="actions-footer">
+                             <button class="action-footer save">
+                                <lucide-icon name="save" ng-reflect-name="save">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save">
+                                      <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" key="1owoqh"></path>
+                                      <polyline points="17 21 17 13 7 13 7 21" key="1md35c"></polyline>
+                                      <polyline points="7 3 7 8 15 8" key="8nz8an"></polyline>
+                                   </svg>
+                                </lucide-icon>
+                                Lưu dữ liệu 
+                             </button>
+                             <button class="action-footer complete">
+                                Hoàn thành 
+                                <lucide-icon name="arrow-right" ng-reflect-name="arrow-right">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                                      <path d="M5 12h14" key="1ays0h"></path>
+                                      <path d="m12 5 7 7-7 7" key="xquz4c"></path>
+                                   </svg>
+                                </lucide-icon>
+                             </button>
+                          </div>
+                       </div>
+                    </app-bottom-step-component>
+                 </app-step-1-structure-component>
+                 <!--bindings={
+                    "ng-reflect-ng-switch-case": "init"
+                    }--><!--bindings={
+                    "ng-reflect-ng-switch-case": "receive_documents"
+                    }--><!--bindings={
+                    "ng-reflect-ng-switch-case": "up_a_council"
+                    }--><!--bindings={
+                    "ng-reflect-ng-switch-case": "mark"
+                    }--><!--bindings={
+                    "ng-reflect-ng-switch-case": "recognize_students"
+                    }--><!--bindings={
+                    "ng-reflect-ng-switch-case": "done"
+                    }-->
+              </container-element>
+           </div>
+        </div>
+     </app-screen-admissions-detail-admin-component>
+     <!--container-->
+  </div>
+</body>

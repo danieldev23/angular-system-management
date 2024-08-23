@@ -1,0 +1,128 @@
+<div class="content-form mt-2 py-2">
+  <div class="content-component row">
+    <div class="content-form-left col-md-8">
+      <div class="forms row align-items-center justify-content-center">
+        <div
+          class="form-input col-md-12"
+          *ngFor="let briefTemplate of data; let index = index"
+        >
+          <div class="form-input-content d-flex">
+            <div class="input px-2">
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="briefTemplate.attributeName"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="input-group-prepend">
+              <select
+                class="form-control"
+                [(ngModel)]="briefTemplate.attributeType" 
+                [ngModelOptions]="{ standalone: true }"
+              >
+                <option value="string">Chuỗi bình thường</option>
+                <option value="file">File đính kèm</option>
+                <option value="string.full_name">Chuỗi tên</option>
+                <option value="string.email">Chuỗi email</option>
+                <option value="string.tell">Chuỗi số điện thoại</option>
+                <lucide-icon name="chevron-down"></lucide-icon>
+              </select>
+            </div>
+          </div>
+          <div class="form-input-action">
+            <div
+              class="btn-del"
+              *ngIf="
+                ['string', 'file'].includes(briefTemplate.attributeType ?? '')
+              "
+              (click)="onHandleRemoveBriefTemplate(index)"
+            >
+              <lucide-icon style="color: red" name="trash-2"></lucide-icon>
+            </div>
+            <div
+              class="btn-create"
+              (click)="onHandleCreateBriefTemplate(index)"
+            >
+              <button class="button-create">
+                <span class="button-icon">
+                  <lucide-icon name="plus" style="color: white"></lucide-icon>
+                </span>
+                <span class="button-text" style="color: white">Tạo mới</span>
+              </button>
+            </div>
+
+            <div class="check">
+              <label class="check-label" for="flexCheckDefault">
+                Trường bắt buộc
+              </label>
+              <input
+                class="check-input"
+                type="checkbox"
+                id="flexCheckDefault"
+                [(ngModel)]="briefTemplate.isRequire"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-form-right col-md-4">
+      <form [formGroup]="academicForm" class="">
+        <div class="right-item">
+          <p>Mã tuyển sinh</p>
+          <div class="input-right">
+            <input
+              type="text"
+              value="{{ admissions.code }}"
+              class="form-control"
+              placeholder="Mã tuyển sinh ..."
+              formControlName="academicCode"
+            />
+          </div>
+        </div>
+        <div class="right-item">
+          <p>Khóa</p>
+          <div class="input-right">
+            <input
+              type="text"
+              class="form-control"
+              value="{{ admissions.academicYearPrefix }}"
+              placeholder="Khóa tuyển sinh ..."
+              formControlName="academicYearPrefix"
+            />
+          </div>
+        </div>
+        <div class="right-item">
+          <p>Cấp độ</p>
+          <div class="input-group-prepend prepend-right">
+            <select class="form-control" formControlName="academicDegree">
+              <option
+                [value]="'ts'"
+                *ngIf="admissions?.academicDegree === 'ts'"
+              >
+                Tiến sỹ
+              </option>
+              <option
+                [value]="'th.s'"
+                *ngIf="admissions?.academicDegree === 'th.s'"
+              >
+                Thạc sỹ
+              </option>
+
+              <option value="ts">Tiến sỹ</option>
+              <option value="th.s">Thạc sỹ</option>
+              <lucide-icon name="chevron-down"></lucide-icon>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-bottom-step-component
+  (onSaved)="handleUpdateForm()"
+></app-bottom-step-component>

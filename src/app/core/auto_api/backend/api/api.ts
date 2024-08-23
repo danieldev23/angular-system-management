@@ -1,0 +1,11 @@
+export * from './auth.service';
+import { AuthService } from './auth.service';
+export * from './briefTemplate.service';
+import { BriefTemplateService } from './briefTemplate.service';
+export * from './enrollmentPeriod.service';
+import { EnrollmentPeriodService } from './enrollmentPeriod.service';
+export * from './enrollmentTeacher.service';
+import { EnrollmentTeacherService } from './enrollmentTeacher.service';
+export * from './profileInfo.service';
+import { ProfileInfoService } from './profileInfo.service';
+export const APIS = [AuthService, BriefTemplateService, EnrollmentPeriodService, EnrollmentTeacherService, ProfileInfoService];

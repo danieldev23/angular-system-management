@@ -1,0 +1,94 @@
+<div class="modal fade" id="createStudentProfile" aria-labelledby="createModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="createModalLabel">
+          Tạo mới hồ sơ học viên
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="studentProfileForm">
+          <div class="mb-3">
+            <label for="academicYearPrefix" class="form-label">Họ và tên:</label>
+            <input
+            
+              type="text"
+              class="form-control"
+              id="academicYearPrefix"
+              formControlName="fullName"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="academicYearStart" class="form-label"
+              >Email:</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="numberphone" class="form-label"
+              >Số điện thoại</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="numberphone"
+              formControlName="numberphone"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="status" class="form-label"
+              >Trạng thái</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="status"
+              formControlName="status"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="noteText" class="form-label"
+              >Ghi chú</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="noteText"
+              formControlName="noteText"
+              required
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size: 16px;">
+          Đóng
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary btnCreate"
+          style="font-size: 16px;"
+          [disabled]="studentProfileForm.invalid"
+          (click)="onCreate()"
+        >
+          Tạo mới
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

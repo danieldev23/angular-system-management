@@ -1,0 +1,105 @@
+<div class="modal fade" id="createModal" aria-labelledby="createModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="createModalLabel">
+          Tạo mới các kỳ tuyển sinh
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="createForm">
+          <div class="mb-3">
+            <label for="academicYearPrefix" class="form-label">Khoá học:</label>
+            <input
+            
+              type="text"
+              class="form-control"
+              id="academicYearPrefix"
+              formControlName="academicYearPrefix"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="academicYearStart" class="form-label"
+              >Năm bắt đầu:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="academicYearStart"
+              formControlName="academicYearStart"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="academicYearEnd" class="form-label"
+              >Năm kết thúc:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="academicYearEnd"
+              formControlName="academicYearEnd"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="academicDegree" class="form-label">Cấp độ:</label>
+            <select
+              type="number"
+              class="form-control"
+              id="academicDegree"
+              formControlName="academicDegree"
+              required
+            >
+              <option value="0">Tiến sỹ</option>
+              <option value="1">Thạc sỹ</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="startTime" class="form-label">Thời gian bắt đầu:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="startTime"
+              formControlName="startTime"
+              required
+            />
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="isSendingResumesFreely"
+              formControlName="isSendingResumesFreely"
+              required
+            />
+            <label class="form-check-label" for="isSendingResumesFreely"
+              >Cho phép gửi hồ sơ tự do</label
+            >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size: 16px;">
+          Đóng
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary btnCreate"
+          style="font-size: 16px;"
+          [disabled]="createForm.invalid"
+          (click)="onCreate()"
+        >
+          Tạo mới
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
