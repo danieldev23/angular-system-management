@@ -25,27 +25,30 @@ export class LoginAuthComponent extends MyBaseComponent {
       }),
     });
   }
-  onLogin() {
-    if (!this.loginForm?.invalid) {
-      console.log(this.loginForm.getRawValue());
-      
-      this.authService
-        .apiAuthLoginPost(this.loginForm.getRawValue() as AuthLoginRequest)
-        .subscribe((response) => {
-          if (response.success) {
-            this.showMsgSuccess('Đăng nhập thành công!');
-            this.userService.saveUserObj(
-              response.data!,
-              response.data!.rememberToken!
-            );
-            this.redirectService.redirectNetworkHome();
-            console.log('Login successful!');
-          } else {
-            this.showMsgFailure('Tài khoản và mật khẩu không tồn tại!');
-            console.log('Login failed!');
-            this.redirectService.redirectLogin();
-          }
-        });
+onLogin() {
+  if (!this.loginForm?.invalid) {
+    const { email, password } = this.loginForm.getRawValue();
+
+    // Hardcoded login check
+    if (email === 'huy@gmail.com' && password === 'huy123') {
+      this.showMsgSuccess('Đăng nhập thành công!');
+      this.userService.saveUserObj(
+        {
+          id: 1,
+          name: 'Huy',
+          email: email,
+          rememberToken: 'fake-token-123'
+        },
+        'fake-token-123'
+      );
+      this.redirectService.redirectNetworkHome();
+      console.log('✅ Đăng nhập thành công (hardcoded)');
+    } else {
+      this.showMsgFailure('Tài khoản và mật khẩu không tồn tại!');
+      console.log('❌ Sai thông tin đăng nhập (hardcoded)');
+      this.redirectService.redirectLogin();
     }
   }
+}
+
 }
